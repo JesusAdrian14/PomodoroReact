@@ -17,6 +17,13 @@ function Timer({ children }) {
     const [cycleCount, setCycleCount] = useState(0); // Contador de ciclos completados
     const styleRef = useRef(null);
     const [repeticiones, setRepeticiones] = useState(0); // Contador de repeticiones
+    const [estadoActual, setEstadoActual] = useState("Pomodoro"); // Estado actual del temporizador
+    
+    const [checked, setIschecked] = useState(false);
+
+    const handleCheckbox = (e) => {
+        setIschecked(e.target.checked);
+    }
 
     // Refs para inputs
     const pomodoroRef = useRef(null);
@@ -89,36 +96,7 @@ function Timer({ children }) {
         const segundos = (time % 60).toString().padStart(2, "0");
         return `${minutos}:${segundos}`;
     };
-    /*
-        useEffect(() => {
-            if (isRunning && time > 0) {
-                const timer = setTimeout(() => {
-                    setTime((prevTime) => prevTime - 1);
-                }, 1000);
-    
-                return () => clearTimeout(timer);
-            } else if (time === 0) {
-                if (isPomodoro) {
-                    // Alternar entre descanso corto y largo según el ciclo
-                    if (cycleCount === 3) {
-                        setTime(tiempoTotal.descansoLargo * 60);
-                        setCycleCount(0); // Reiniciar el contador de ciclos
-                        setRepeticiones((Prevrepeticiones) => Prevrepeticiones + 1); // Incrementar el contador de repeticiones                }
-                    } else if (cycleCount <= 2) {
-                        setTime(tiempoTotal.descanso * 60);
-                        setCycleCount((prevCount) => prevCount + 1);
-                        setRepeticiones((Prevrepeticiones) => Prevrepeticiones + 1); // Incrementar el contador de repeticiones                }
-                        styleRef.current.style.backgroundColor = "#53ff4d"; // Cambiar el color de fondo a verde
-                    } else {
-                        setTime(tiempoTotal.pomodoro * 60);
-                        setRepeticiones((Prevrepeticiones) => Prevrepeticiones + 1); // Incrementar el contador de repeticiones
-                    }
-                    setIsPomodoro(!isPomodoro); // Alternar el estado
-                    setIsRunning(false); // Pausar automáticamente
-                }
-            }
-        }, [isRunning, time, isPomodoro, tiempoTotal, cycleCount]);
-    */
+
     function guardarReporte(tiempoTotal, tipo) {
         const hoy = new Date().toLocaleDateString("es-CO");
         const reportes = JSON.parse(localStorage.getItem("reportes")) || {};
@@ -157,25 +135,30 @@ function Timer({ children }) {
                     setTime(tiempoTotal.descansoLargo * 60);
                     setCycleCount(0);
                     guardarReporte(tiempoTotal, "descansoLargo");
+                    setEstadoActual("Descanso Largo");
+                    styleRef.current.style.backgroundColor = !checked? "#48e": ''; // Cambiar el fondo a un color claro para "Descanso Largo"
                 } else {
                     setTime(tiempoTotal.descanso * 60);
                     setCycleCount((prevCount) => prevCount + 1);
                     guardarReporte(tiempoTotal, "descanso");
+                    setEstadoActual("Descanso Corto");
+                    styleRef.current.style.backgroundColor = !checked? '#007BFF' : ''; // Cambiar el fondo a un color claro para "Descanso Largo"
                 }
-
-                styleRef.current.style.backgroundColor = "#53ff4d";
             } else {
                 // Descanso terminado -> nuevo Pomodoro
                 setTime(tiempoTotal.pomodoro * 60);
                 guardarReporte(tiempoTotal, "pomodoro");
+                setEstadoActual("Pomodoro");
+                styleRef.current.style.backgroundColor = ''; // Restablecer el fondo al estado original
+                // Restablecer el fondo al estado original
             }
 
             setRepeticiones((prev) => prev + 1);
             setIsPomodoro((prev) => !prev);
             setIsRunning(false);
         }
-    }, [isRunning, time, isPomodoro, tiempoTotal, cycleCount]);
-
+    }, [isRunning, time, isPomodoro, tiempoTotal, cycleCount, checked]);
+    
     const start = () => setIsRunning(true);
     const pause = () => setIsRunning(false);
     const reset = () => {
@@ -188,8 +171,6 @@ function Timer({ children }) {
     useEffect(() => {
         console.log("Repeticiones actualizadas:", repeticiones);
     }, [repeticiones]);
-
-
 
     return (
         <datosDeTemporisador.Provider
@@ -213,6 +194,9 @@ function Timer({ children }) {
                 cycleCount,
                 repeticiones,
                 guardarReporte,
+                estadoActual,
+                handleCheckbox,
+                checked,
             }}
         >
             {children}

@@ -137,7 +137,7 @@ nav > button:active {
   align-items: center;
   margin-top: 10px;
   flex-direction: column; /* Asegurar que los elementos se apilen verticalmente */
-  width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+  width: 70%; /* Asegurar que ocupe todo el ancho disponible */
   background-color: transparent;
   height: 100%;
 }

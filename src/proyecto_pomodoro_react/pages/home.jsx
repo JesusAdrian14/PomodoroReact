@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { datosDeTemporisador } from "../components/timer";
-import './style.css'
+import './style.css';
 import { configuraciones } from "../components/settings";
 
 function Home() {
     const { estilos, colorText } = useContext(configuraciones);
-    const { time, formatTime, pause, start, reset, isRunning, styleRef } = useContext(datosDeTemporisador);
+    const { time, formatTime, pause, start, reset, isRunning, styleRef, estadoActual } = useContext(datosDeTemporisador);
+
 
     return (
         <main className="container-timer" ref={styleRef}>
@@ -36,6 +37,10 @@ function Home() {
                     Reset
                 </button>
             </div>
+            {/* Texto dinámico para el estado actual con color correspondiente */}
+            <p className="estado-actual" style={colorText}>
+                {isRunning ? "En curso    -    " : "Detenido   -  "}{estadoActual}
+            </p>
         </main>
     );
 }

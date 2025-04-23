@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { configuraciones } from "../components/settings";
 import { datosDeTemporisador } from "../components/timer";
 import './style.css';
 
 function BtnSettings() {
-    const { handleGuardar, pomodoroRef, descansoCortoRef, descansoLargoRef } = useContext(datosDeTemporisador);
+    const { handleGuardar, pomodoroRef, descansoCortoRef, descansoLargoRef, handleCheckbox, checked } = useContext(datosDeTemporisador);
     const { handleButtonSettings, BotonSettings, estilos } = useContext(configuraciones);
 
     const guardarCambios = () => {
@@ -28,6 +28,10 @@ function BtnSettings() {
                     <input ref={descansoCortoRef} type="number" id="descanso-corto" min="1" max="60" defaultValue={5} />
                     <label htmlFor="descanso-largo">Descanso largo:</label>
                     <input ref={descansoLargoRef} type="number" id="descanso-largo" min="1" max="60" defaultValue={15} />
+                </div>
+                <div className="container-checkbox">
+                    <input type="checkbox" id="desactivarColores" onChange={handleCheckbox} />
+                    <label htmlFor="desactivarColores">FondoColor del descanso: {!checked? 'Activado' : 'Desactivado'}</label>
                 </div>
             </div>
             <div className="container-botones-guardar-cancelar">
