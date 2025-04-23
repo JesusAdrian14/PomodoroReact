@@ -5,8 +5,8 @@ import Home from './proyecto_pomodoro_react/pages/home.jsx'; // Página principa
 import Settings from './proyecto_pomodoro_react/components/settings.jsx'; // Contexto de configuración
 import Timer from './proyecto_pomodoro_react/components/timer.jsx'; // Contexto del temporizador
 import StatsPage from './proyecto_pomodoro_react/pages/stats_Page.jsx';
-import ReportesPage from './proyecto_pomodoro_react/pages/reportes_Page.jsx';
-import SettingPage from './proyecto_pomodoro_react/pages/settings_Page.jsx';
+import ReportesPage from './proyecto_pomodoro_react/pages/page_btn_reporte.jsx';
+import SettingPage from './proyecto_pomodoro_react/pages/page_btn_settings.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
