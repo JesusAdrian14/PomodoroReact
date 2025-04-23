@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+div {
+  display: block; /* Asegúrate de que no esté oculto */
+}
+h1 {
+  font-size: 2rem;
+  color: #333; /* Color del texto */
+  margin-bottom: 20px; /* Espacio entre el título y el botón */
+}

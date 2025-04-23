@@ -1,0 +1,301 @@
+body {
+  display: flex; /* Usar flexbox para centrar */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  min-height: 100vh; /* Asegurar que ocupe toda la altura de la ventana */
+  max-height: 2000px;
+  margin: 0; /* Eliminar márgenes predeterminados */
+  padding: 0; /* Eliminar relleno predeterminado */
+  font-family: Arial, sans-serif;
+  background-color: #dcd8ff00; /* Fondo claro */
+}
+img{
+  width: 30px; /* Ancho de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  margin: 0 auto; /* Centrar la imagen horizontalmente */
+  display: block; /* Mostrar como bloque para centrar */
+}
+ul {
+  list-style: none; /* Eliminar viñetas */
+  padding: 0; /* Eliminar relleno */
+  margin: 0; /* Eliminar márgenes */
+  display: flex; /* Usar flexbox para alinear los elementos */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  gap: 20px; /* Espacio entre los elementos */
+}
+
+.form {
+  display: flex;
+  gap: 20px;
+}
+
+.form > label {
+  text-align: right; /* Alinear el texto del label a la derecha */
+  font-weight: bold;
+}
+
+.form > input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 2px solid #353535;
+  transition: border-color 0.3s ease;
+  outline: none;
+  gap: 20px;
+  background-color: red;
+}
+
+.form > input:focus {
+  border-color: #535bf2;
+}
+
+input {
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  width: 60%;
+  border: 2px solid #353535; /* Borde */
+  transition: border-Color 0.3s ease; /* Transición suave para el borde */
+  outline: none; /* Eliminar contorno predeterminado */
+}
+input:focus {
+  border-color: #535bf2;
+}
+
+
+.dia {
+  background-color: #ffffff; /* Fondo claro */
+  color: #000000; /* Texto oscuro */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.noche {
+  background-color: #1b1b1b; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex; /* Usar flexbox para centrar el contenido dentro del root */
+  flex-direction: column; /* Asegurar que los elementos se apilen verticalmente */
+  align-items: center;
+  width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+  height: 100%; /* Asegurar que ocupe toda la altura disponible */
+}
+
+nav {
+  width: 100%; /* Asegurar que ocupe todo el ancho */
+  display: flex;
+  justify-content:space-between; /* Centrar horizontalmente los elementos del nav */
+  align-items: center; /* Centrar verticalmente los elementos del nav */
+  background-color: #dcd8ff00; /* Fondo semitransparente */
+  padding: 5px 30px;
+  margin-bottom: 10px;
+  gap: 20px; /* Espacio entre los elementos */
+  position: absolute;
+  top: 0; /* Asegurar que esté en la parte superior */
+}
+
+.container-home {
+  display: flex; /* Usar flexbox para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+  margin-top: 10px;
+  flex-direction: column; /* Asegurar que los elementos se apilen verticalmente */
+  width: 60%; /* Asegurar que ocupe todo el ancho disponible */
+  background-color: transparent;
+  height: 100%;
+}
+
+.link {
+  text-decoration: inherit;
+  border: none;
+}
+h1{
+  margin: 0;
+}
+/* Estilos generales para la tabla */
+table {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  border-collapse: collapse; /* Elimina los espacios entre bordes */
+  font-size: 16px; /* Tamaño de fuente */
+  margin: 0;
+  text-align: left; /* Alineación del texto */
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 2px solid #ddd; /* Borde general */
+}
+
+/* Estilos para las filas de títulos */
+table th {
+  background-color: #646cff; /* Fondo para los títulos */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Negrita */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Centrar texto */
+  border: 2px solid #ddd; /* Borde entre celdas */
+}
+
+
+/* Estilos para las filas de datos */
+table td {
+  padding: 10px; /* Espaciado interno */
+  border: 2px solid #ddd; /* Borde entre celdas */
+  color: #000000; /* Color del texto */
+}
+
+/* Alternar colores en las filas de datos */
+table tr:nth-child(even) td {
+  background-color: #f1f1f1; /* Fondo alternativo */
+}
+
+/* Hover para las filas */
+table tr:hover td {
+  background-color: #e0e0ff; /* Fondo al pasar el mouse */
+  color: #000; /* Texto más oscuro */
+}
+
+/* Estilo para títulos en filas */
+table th.row-title {
+  background-color: #535bf2; /* Fondo más oscuro */
+  color: #ffffff; /* Texto blanco */
+  text-align: left; /* Alineación a la izquierda */
+  padding: 10px;
+}
+
+button, li {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid black;
+}
+
+button:hover, li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active, li:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-eliminar {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-eliminar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-editar {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-editar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.edit-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.edit-window h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.edit-window form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-window label {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.edit-window input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.edit-window button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-window button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-window button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.edit-window button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-window button[type="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #ffffff;
+  }
+  link:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

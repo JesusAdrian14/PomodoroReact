@@ -1,0 +1,83 @@
+body {
+    background-color: #000418;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    top: 20%;
+}
+*{
+    color: rgb(255, 255, 255);
+}
+button{
+    background-color: #003585;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 89, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+button:active {
+    transform: translateY(0);
+}
+.girar {
+    width: 500px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: girar 10s linear infinite;
+    border-radius: 100%;
+}
+.rojo{
+    border: 1px rgb(255, 48, 41) solid;
+    background-color: #ffb3b3;
+    color: #ff0000;
+}
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+input{
+    color: black;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

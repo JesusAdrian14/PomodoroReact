@@ -1,0 +1,42 @@
+.nota-ventana{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    gap: 10px;
+    border: 1px solid #000000;
+    background-color: #00163b;
+    border-radius: 10px;
+    padding: 10px;
+    top: 40%;
+    left: 20%;
+    position: absolute;
+}
+.container-nota{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    border-radius: 10px;
+}
+.container-nota > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.quitar-ventana{
+    background-color: #ff0000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    padding: 0 14px;
+}
