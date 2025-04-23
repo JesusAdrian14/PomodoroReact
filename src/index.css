@@ -43,7 +43,6 @@ ul {
   transition: border-color 0.3s ease;
   outline: none;
   gap: 20px;
-  background-color: red;
 }
 
 .form > input:focus {
@@ -54,7 +53,7 @@ input {
   padding: 10px; /* Espaciado interno */
   border-radius: 5px; /* Bordes redondeados */
   font-size: 16px; /* Tamaño de fuente */
-  width: 60%;
+  width: 60%; /* Asegurar que ocupe todo el ancho disponible */
   border: 2px solid #353535; /* Borde */
   transition: border-Color 0.3s ease; /* Transición suave para el borde */
   outline: none; /* Eliminar contorno predeterminado */
@@ -92,14 +91,44 @@ input:focus {
 nav {
   width: 100%; /* Asegurar que ocupe todo el ancho */
   display: flex;
-  justify-content:space-between; /* Centrar horizontalmente los elementos del nav */
+  justify-content:center; /* Centrar horizontalmente los elementos del nav */
   align-items: center; /* Centrar verticalmente los elementos del nav */
   background-color: #dcd8ff00; /* Fondo semitransparente */
   padding: 5px 30px;
   margin-bottom: 10px;
-  gap: 20px; /* Espacio entre los elementos */
+  gap: 60px; /* Espacio entre los elementos */
   position: absolute;
   top: 0; /* Asegurar que esté en la parte superior */
+}
+
+nav > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Ancho fijo */
+    height: 70px; /* Altura fija */
+    gap: 5px; /* Espaciado entre el texto y la imagen */
+    border: 2px solid black; /* Borde */
+    color: white; /* Texto blanco */
+    background-color: black; /* Fondo negro */
+    margin: 10px 0 0 10px; /* Margen para separación */
+    cursor: pointer; /* Cambiar el cursor al pasar */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transiciones suaves */
+}
+
+nav > button:hover {
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra al pasar el mouse */
+}
+
+nav > button:active {
+    transform: translateY(0); /* Volver a la posición original */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pequeña */
+}
+
+.button-report > img {
+    width: 35px; /* Ajustar el tamaño de la imagen */
+    height: auto; /* Mantener la proporción */
 }
 
 .container-home {

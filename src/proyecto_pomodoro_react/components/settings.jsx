@@ -6,9 +6,7 @@ function Settings({ children }) {
     const [isDay, setIsDay] = useState(true);
     const [BotonSettings, setBotonSettings] = useState(true);
     const [botonReport, setBotonReport] = useState(false);
-
-
-
+    
     useEffect(() => {
         document.body.className = isDay ? "dia" : "noche";
     }, [isDay]);

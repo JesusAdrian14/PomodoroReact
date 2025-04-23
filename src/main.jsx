@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
 import './index.css'; // Estilos globales
 import Home from './proyecto_pomodoro_react/pages/home.jsx'; // Página principal
 import Settings from './proyecto_pomodoro_react/components/settings.jsx'; // Contexto de configuración
@@ -9,15 +10,15 @@ import ReportesPage from './proyecto_pomodoro_react/pages/page_btn_reporte.jsx';
 import SettingPage from './proyecto_pomodoro_react/pages/page_btn_settings.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <Timer>
-            <Settings>
+    <StrictMode>
+        <Settings>
+            <Timer>
                 {/* Renderizar las ventanas modales y el componente principal */}
                 <StatsPage />
                 <ReportesPage />
                 <SettingPage />
                 <Home />
-            </Settings>
-        </Timer>
-    </React.StrictMode>
+            </Timer>
+        </Settings>
+    </StrictMode>
 );

@@ -9,36 +9,34 @@ function StatsPage() {
     };
 
     return (
-        <>
-            <nav style={navStyle}>
-                <button id="button" onClick={handleButtonReport} style={estilos} className="button-report">
-                    <img
-                        src={imagenes.reportar}
-                        alt="Reporte sobre el tiempo estudiado con pomodoro"
-                    />
-                    Report
-                </button>
-                <button onClick={handleButtonSettings} style={estilos} id="button" className="button-report">
-                    <img
-                        src={imagenes.configuracion}
-                        alt="Configuración del pomodoro"
-                    />
-                    Settings
-                </button>
-                <button
-                    id="button"
-                    className="button-report"
-                    onClick={toggleTheme}
-                    style={estilos}
-                >
-                    <img
-                        src={imagenes.DiaYnoche}
-                        alt={isDay ? 'Modo Noche' : 'Modo Dia'}
-                    />
-                    {!isDay ? "Modo Noche" : "Modo Día"}
-                </button>
-            </nav>
-        </>
+        <nav style={navStyle} className="nav">
+            <button id="button" onClick={handleButtonReport} style={estilos} className="button-report">
+                <img
+                    src={imagenes.reportar}
+                    alt="Reporte sobre el tiempo estudiado con pomodoro"
+                />
+                Report
+            </button>
+            <button onClick={handleButtonSettings} style={estilos} id="button" className="button-report">
+                <img
+                    src={imagenes.configuracion}
+                    alt="Configuración del pomodoro"
+                />
+                Settings
+            </button>
+            <button
+                id="button"
+                className="button-report"
+                onClick={toggleTheme}
+                style={estilos}
+            >
+                <img
+                    src={imagenes.DiaYnoche}
+                    alt={isDay ? 'Modo Noche' : 'Modo Dia'}
+                />
+                {!isDay ? "Modo Noche" : "Modo Día"}
+            </button>
+        </nav>
     );
 }
 

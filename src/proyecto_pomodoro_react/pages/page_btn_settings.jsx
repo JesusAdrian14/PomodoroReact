@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { configuraciones } from "../components/settings";
 import { datosDeTemporisador } from "../components/timer";
-import './styleSettings.css';
+import './style.css';
 
 function BtnSettings() {
     const { handleGuardar, pomodoroRef, descansoCortoRef, descansoLargoRef } = useContext(datosDeTemporisador);
-    const { handleButtonSettings, BotonSettings, isDay, estilos } = useContext(configuraciones);
+    const { handleButtonSettings, BotonSettings, estilos } = useContext(configuraciones);
 
     const guardarCambios = () => {
         const seGuardoExitosamente = handleGuardar();
@@ -17,11 +17,8 @@ function BtnSettings() {
     };
 
     return (
-        <section className={BotonSettings ? 'ocultar-ventana-settings' : 'container-ventana-settings'}>
-            <button
-                className={`cerrar-ventana-settings ${isDay ? 'dia' : 'noche'}`}
-                onClick={handleButtonSettings}
-            ></button>
+        <section className={BotonSettings ? 'ocultar-ventana' : 'container-ventana-settings'}>
+            
             <div className="ventana-settings">
                 <h2 className="tittle-ventana-settings">Configuración</h2>
                 <div className="configuracion-tiempos">

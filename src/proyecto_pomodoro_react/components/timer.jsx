@@ -1,5 +1,4 @@
 import React, { useState, useEffect, createContext, useRef } from "react";
-import "./style.css";
 
 // Crear el contexto
 export const datosDeTemporisador = createContext();
