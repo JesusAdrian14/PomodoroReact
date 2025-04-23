@@ -10,13 +10,14 @@ import SettingPage from './proyecto_pomodoro_react/pages/page_btn_settings.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <Settings>
-            <Timer>
-                <ReportesPage />
+        <Timer>
+            <Settings>
+                {/* Renderizar las ventanas modales y el componente principal */}
                 <StatsPage />
+                <ReportesPage />
                 <SettingPage />
                 <Home />
-            </Timer>
-        </Settings>
+            </Settings>
+        </Timer>
     </React.StrictMode>
 );
