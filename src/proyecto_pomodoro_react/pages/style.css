@@ -6,8 +6,10 @@
     color: black;
     margin: 0;
     gap: 20px; /* Espaciado uniforme entre los elementos */
-    width: 100%;
+    width: 100%; /* Asegurar que no exceda el ancho de la pantalla */
+    max-width: 100%; /* Evitar que el contenido se desborde */
     height: 100vh;
+    padding: 20px; /* Espaciado interno para pantallas pequeñas */
 }
 
 .ocultar-ventana {
@@ -35,14 +37,15 @@ section {
     border-radius: 15px; /* Bordes redondeados */
     padding: 20px; /* Espaciado interno */
     border: 2px solid rgb(0, 0, 0); /* Borde sutil */
-    width: 30%; /* Ancho relativo */
+    width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    max-width: 400px; /* Limitar el ancho máximo */
+    margin: 0 auto; /* Centrar el contenido */
 }
 
-
 section button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
+    padding: 8px 15px; /* Tamaño reducido */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    border-radius: 5px; /* Bordes redondeados */
     border: none;
     background-color: #007BFF; /* Azul moderno */
     color: white;
@@ -84,14 +87,15 @@ section label {
     margin: 0;
     padding: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 120px;
+    font-size: 100px; /* Tamaño ajustado para pantallas pequeñas */
+    text-align: center;
 }
 
 .timer-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px; /* Espaciado reducido para pantallas pequeñas */
     margin: 20px 0 0 0;
 }
 button{
@@ -104,9 +108,18 @@ button{
 }
 
 .timer-buttons > button {
+    display: flex; /* Usar flexbox para centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
     background-color: rgb(0, 0, 0);
     color: white;
-    font-size: 20px;
+    font-size: 18px; /* Tamaño de fuente ajustado */
+    width: 100%; /* Ajustar el ancho al contenedor */
+    max-width: 100px; /* Limitar el ancho máximo */
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
@@ -121,10 +134,10 @@ button:active {
 
 .estado-actual {
     font-family: 'Roboto', sans-serif; /* Tipografía moderna */
-    font-size: 24px; /* Tamaño del texto */
+    font-size: 20px; /* Tamaño reducido */
     font-weight: bold; /* Negrita */
-    margin-top: 20px; /* Espaciado superior */
-    color:lawngreen; /* Color atractivo */
+    margin-top: 15px; /* Espaciado superior reducido */
+    color: lawngreen; /* Color atractivo */
     text-align: center; /* Centrar el texto */
     text-transform: uppercase; /* Texto en mayúsculas */
 }
@@ -138,40 +151,133 @@ button:active {
     gap: 10px; /* Espaciado entre checkbox y label */
     margin-top: 20px; /* Espaciado superior */
 }
+
+/* Ajustes generales */
+body {
+    overflow-x: hidden; /* Eliminar el scroll horizontal */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+}
+
+img{
+    width: 30px; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+    display: block; /* Mostrar como bloque para centrar */
+}
+nav {
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+    gap: 30px; /* Espaciado reducido entre botones */
+    padding: 0 10px; /* Ajustar el padding para evitar desbordamiento */
+}
+
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
     .container-timer {
-        width: 100%;
+        width: 100%; /* Asegurar que no exceda el ancho de la pantalla */
         height: auto; /* Permitir que el contenedor se ajuste al contenido */
-        padding: 20px; /* Espaciado interno */
+        padding: 15px; /* Espaciado interno reducido */
+        margin: 0 auto; /* Centrar el contenido */
     }
     section {
-        width: 90%; /* Ancho relativo para pantallas pequeñas */
+        width: 95%; /* Ancho relativo para pantallas pequeñas */
+        padding: 15px; /* Espaciado interno reducido */
+        margin: 0 auto; /* Centrar el contenido */
     }
     .time {
-        font-size: 80px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+        font-size: 90px; /* Tamaño de fuente más pequeño */
     }
     .timer-buttons > button {
-        width: 80px; /* Botones más pequeños para pantallas pequeñas */
-        height: 50px;
+        width: 90%; /* Ajustar el ancho al contenedor */
+        height: 45px; /* Botones más pequeños */
+        font-size: 16px; /* Tamaño de texto ajustado */
+    }
+    nav {
+        width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+        padding: 0 10px; /* Reducir el padding */
+        box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+        gap: 15px; /* Espaciado entre botones */
+    }
+    .img {
+        width: 25px; /* Tamaño reducido para pantallas pequeñas */
+        height: auto; /* Mantener la proporción */
     }
 }
+
+/* Ajustes para pantallas muy pequeñas */
 @media (max-width: 480px) {
-    .time {
-        font-size: 60px; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    .container-timer {
+        width: 100%; /* Asegurar que no exceda el ancho de la pantalla */
+        margin-top: 20px; /* Ajustar el margen superior */
+        padding: 10px; /* Espaciado interno reducido */
+        text-align: center; /* Centrar el texto */
     }
-    .timer-buttons > button {
-        width: 70px; /* Botones más pequeños para pantallas muy pequeñas */
-        height: 40px;
-    }
-    nav{
-        gap: 7px;
-    }
-    section{
+    section {
         width: 95%; /* Ancho relativo para pantallas muy pequeñas */
         padding: 10px; /* Espaciado interno reducido */
+        margin: 0 auto; /* Centrar el contenido */
     }
-    body{
-        height: 100vh; /* Altura del body para pantallas pequeñas */
-        overflow: hidden; /* Evitar el desplazamiento vertical */
+    nav > button{
+        width: 100px; /* Ancho reducido para botones en pantallas pequeñas */
+        height: 50px; /* Altura reducida para botones en pantallas pequeñas */
+        font-size: 12px; /* Tamaño de texto reducido */
+        padding: 5px 10px; /* Espaciado interno reducido */
+    }
+    .time {
+        font-size: 100px; /* Tamaño de fuente más pequeño */
+        text-align: center; /* Centrar el texto */
+    }
+    .timer-buttons > button {
+        width: 100%; /* Ajustar el ancho al contenedor */
+        max-width: 300px; /* Limitar el ancho máximo */
+        height: 50px; /* Botones más pequeños */
+        font-size: 14px; /* Tamaño de texto reducido */
+    }
+    nav {
+        width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+        gap: 10px; /* Espaciado reducido entre botones */
+        margin-bottom: 20px; /* Reducir el margen inferior */
+        padding: 0 5px; /* Reducir el padding */
+        box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+    }
+    body {
+        overflow-x: hidden; /* Eliminar el scroll horizontal */
+        overflow-y: auto; /* Permitir desplazamiento vertical si es necesario */
+    }
+    .estado-actual {
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        margin-top: 10px; /* Reducir el margen superior */
+    }
+    .img {
+        width: 20px; /* Tamaño reducido para pantallas muy pequeñas */
+        height: auto; /* Mantener la proporción */
+    }
+}
+
+/* Ajustes para pantallas extra pequeñas */
+@media (max-width: 320px) {
+    .time {
+        font-size: 80px; /* Tamaño de fuente más pequeño */
+    }
+    .timer-buttons > button {
+        width: 100%; /* Ajustar el ancho al contenedor */
+        max-width: 300px; /* Limitar el ancho máximo */
+        height: 40px; /* Botones más pequeños */
+        font-size: 12px; /* Tamaño de texto reducido */
+    }
+    nav > button{
+        width: 80px; /* Ancho reducido para botones en pantallas pequeñas */
+        height: 40px; /* Altura reducida para botones en pantallas pequeñas */
+        font-size: 10px; /* Tamaño de texto reducido */
+        padding: 5px 5px; /* Espaciado interno reducido */
+    }
+    .estado-actual {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+        margin-top: 5px; /* Reducir el margen superior */
+    }
+    .img {
+        width: 15px; /* Tamaño aún más reducido */
+        height: auto; /* Mantener la proporción */
     }
 }

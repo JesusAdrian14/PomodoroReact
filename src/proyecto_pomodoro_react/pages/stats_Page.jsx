@@ -12,6 +12,7 @@ function StatsPage() {
         <nav style={navStyle} className="nav">
             <button id="button" onClick={handleButtonReport} style={estilos} className="button-report">
                 <img
+                    className='img'
                     src={imagenes.reportar}
                     alt="Reporte sobre el tiempo estudiado con pomodoro"
                 />
@@ -19,6 +20,7 @@ function StatsPage() {
             </button>
             <button onClick={handleButtonSettings} style={estilos} id="button" className="button-report">
                 <img
+                    className='img'
                     src={imagenes.configuracion}
                     alt="Configuración del pomodoro"
                 />
@@ -31,6 +33,7 @@ function StatsPage() {
                 style={estilos}
             >
                 <img
+                    className='img'
                     src={imagenes.DiaYnoche}
                     alt={isDay ? 'Modo Noche' : 'Modo Dia'}
                 />

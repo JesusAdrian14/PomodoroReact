@@ -9,12 +9,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #dcd8ff00; /* Fondo claro */
 }
-img{
-  width: 30px; /* Ancho de la imagen */
-  height: auto; /* Altura automática para mantener la proporción */
-  margin: 0 auto; /* Centrar la imagen horizontalmente */
-  display: block; /* Mostrar como bloque para centrar */
-}
 ul {
   list-style: none; /* Eliminar viñetas */
   padding: 0; /* Eliminar relleno */
