@@ -138,3 +138,40 @@ button:active {
     gap: 10px; /* Espaciado entre checkbox y label */
     margin-top: 20px; /* Espaciado superior */
 }
+@media (max-width: 768px) {
+    .container-timer {
+        width: 100%;
+        height: auto; /* Permitir que el contenedor se ajuste al contenido */
+        padding: 20px; /* Espaciado interno */
+    }
+    section {
+        width: 90%; /* Ancho relativo para pantallas pequeñas */
+    }
+    .time {
+        font-size: 80px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    }
+    .timer-buttons > button {
+        width: 80px; /* Botones más pequeños para pantallas pequeñas */
+        height: 50px;
+    }
+}
+@media (max-width: 480px) {
+    .time {
+        font-size: 60px; /* Tamaño de fuente más pequeño para pantallas muy pequeñas */
+    }
+    .timer-buttons > button {
+        width: 70px; /* Botones más pequeños para pantallas muy pequeñas */
+        height: 40px;
+    }
+    nav{
+        gap: 7px;
+    }
+    section{
+        width: 95%; /* Ancho relativo para pantallas muy pequeñas */
+        padding: 10px; /* Espaciado interno reducido */
+    }
+    body{
+        height: 100vh; /* Altura del body para pantallas pequeñas */
+        overflow: hidden; /* Evitar el desplazamiento vertical */
+    }
+}
