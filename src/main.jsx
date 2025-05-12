@@ -10,13 +10,12 @@ import StatsPage from './proyecto_pomodoro_react/pages/stats_Page.jsx';
 import ReportesPage from './proyecto_pomodoro_react/pages/page_btn_reporte.jsx';
 import SettingPage from './proyecto_pomodoro_react/pages/page_btn_settings.jsx';
 */
-import App from './medidorDePeso/App.jsx';
+import App from './medidorDePeso/app.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <StrictMode>
         {/*
         <Settings>
             <Timer>
-                {/* Renderizar las ventanas modales y el componente principal */}
                 <StatsPage />
                 <ReportesPage />
                 <SettingPage />
