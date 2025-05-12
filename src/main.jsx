@@ -25,7 +25,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </Timer>
         </Settings>*/
         }
-        <Estructura />
-        <Ventana />
+        <Estructura>
+            <Ventana />
+        </Estructura>
+        
     </StrictMode>
 );
