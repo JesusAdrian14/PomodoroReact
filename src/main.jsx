@@ -14,20 +14,16 @@ import Estructura from './creadorDeNotas/componentes/Estructura';
 import Ventana from './creadorDeNotas/componentes/Ventana-nota.jsx';
 //import App from './medidorDePeso/app.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <StrictMode>
-        {/*
-        <Settings>
-            <Timer>
-                <StatsPage />
-                <ReportesPage />
-                <SettingPage />
-                <Home />
-            </Timer>
-        </Settings>*/
-        }
-        <Estructura>
-            <Ventana />
-        </Estructura>
-        
-    </StrictMode>
+  <StrictMode>
+
+    <Settings>
+      <Timer>
+        <StatsPage />
+        <ReportesPage />
+        <SettingPage />
+        <Home />
+      </Timer>
+    </Settings>
+
+  </StrictMode>
 );
