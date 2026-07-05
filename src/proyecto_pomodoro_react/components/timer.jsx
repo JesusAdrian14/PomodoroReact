@@ -20,6 +20,10 @@ function Timer({ children }) {
     const [estadoActual, setEstadoActual] = useState("Pomodoro"); // Estado actual del temporizador
     
     const [checked, setIschecked] = useState(false);
+    const [reportes, setReportes] = useState(() => {
+        const savedReports = localStorage.getItem("reportes");
+        return savedReports ? JSON.parse(savedReports) : {};
+    });
 
     const handleCheckbox = (e) => {
         setIschecked(e.target.checked);
@@ -119,6 +123,7 @@ function Timer({ children }) {
         }
 
         localStorage.setItem("reportes", JSON.stringify(reportes));
+        setReportes(reportes);
     }
 
     useEffect(() => {
@@ -197,6 +202,7 @@ function Timer({ children }) {
                 estadoActual,
                 handleCheckbox,
                 checked,
+                reportes,
             }}
         >
             {children}
